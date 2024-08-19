@@ -15,4 +15,4 @@ jobs:
       - name: Login to ECR
         uses: jwstric2/workflows/.github/actions/login-ecr@master
         with:
-          aws-account-id: '951576884088'
+          aws-account-id: '551576884088'
