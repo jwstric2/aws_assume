@@ -18,24 +18,7 @@ jobs:
     steps:
       - name: Git clone the repository
         uses: actions/checkout@v3
-      - name: Checkout actions-oidc-debugger
-        uses: actions/checkout@v3
+      - name: Login to ECR
+        uses: jwstric2/workflows/.github/actions/login-ecr
         with:
-          repository: github/actions-oidc-debugger
-          ref: main
-          token: ${{ secrets.GITHUB_TOKEN }}
-          path: ./.github/actions/actions-oidc-debugger
-      - name: Debug OIDC Claims
-        uses: ./.github/actions/actions-oidc-debugger
-        with:
-          audience: '${{ github.server_url }}/${{ github.repository_owner }}'
-      - name: configure aws credentials
-        uses: aws-actions/configure-aws-credentials@v4
-        with:
-          role-to-assume: arn:aws:iam::551576884088:role/GitHubLanyard
-          role-session-name: GitHub_to_AWS_via_FederatedOIDC
-          aws-region: ${{ env.AWS_REGION }}
-      # Hello from AWS: WhoAmI
-      - name: Sts GetCallerIdentity
-        run: |
-          aws sts get-caller-identity
+          aws-account-id: '551576884088'
