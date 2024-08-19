@@ -1,6 +1,4 @@
 on:
-  push:
-    branches: [ master, test123 ]
   pull_request:
     branches: [ master ]
 
@@ -19,6 +17,6 @@ jobs:
       - name: Git clone the repository
         uses: actions/checkout@v3
       - name: Login to ECR
-        uses: jwstric2/workflows/.github/actions/login-ecr
+        uses: jwstric2/workflows/.github/actions/login-ecr@master
         with:
           aws-account-id: '551576884088'
