@@ -13,6 +13,6 @@ jobs:
       - name: Git clone the repository
         uses: actions/checkout@v3
       - name: Login to ECR
-        uses: jwstric2/workflows/.github/actions/login-ecr@master
+        uses: jwstric2/workflows/.github/actions/login-ecr@feature/more_stuff
         with:
           aws-account-id: '551576884088'
