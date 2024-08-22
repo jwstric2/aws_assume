@@ -13,6 +13,11 @@ jobs:
       - name: Git clone the repository
         uses: actions/checkout@v3
       - name: Build and Push
+        id: login-ecr
         uses: jwstric2/workflows/.github/actions/login-ecr@feature/more_stuff
         with:
           aws-account-id: '551576884088'
+      - name: Show output
+        run: |
+          echo "Output from the action {{ steps.login-ecr.outputs.private-ecr-registry }}"
+          echo "Output from the action {{ steps.login-ecr.outputs.public-ecr-registry }}"
