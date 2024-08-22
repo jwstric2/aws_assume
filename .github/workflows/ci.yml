@@ -19,5 +19,5 @@ jobs:
           aws-account-id: '551576884088'
       - name: Show output
         run: |
-          echo "Output from the action {{ steps.login-ecr.outputs.private-ecr-registry }}"
-          echo "Output from the action {{ steps.login-ecr.outputs.public-ecr-registry }}"
+          echo "Output from the action ${{ steps.login-ecr.outputs.private-ecr-registry }}"
+          echo "Output from the action ${{ steps.login-ecr.outputs.public-ecr-registry }}"
