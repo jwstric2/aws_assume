@@ -1,3 +1,3 @@
-FROM public.ecr.aws/docker/library/python:3.12.4-slim-bullseye@sha256:7e9400f6d73dcb6fd4ea9a2f6e5334da18631f8facb007711648d924a38cfdc6
+FROM public.ecr.aws/docker/library/python:3.12.7-slim-bullseye@sha256:dbdf1a8e375131679547183a70bdb4f9c512946a4ae42de172d59b151c3da5b7
 
 
